@@ -11,7 +11,7 @@ class StoreBlogRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,16 @@ class StoreBlogRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => 'required|unique:blogs',
+            'description'=>'nullable'
+        ];
+    }
+
+    public function messages():array
+    {
+        return [
+            'title.required' => 'Required!',
+            'title.unique' => 'Title should be unique!',
         ];
     }
 }

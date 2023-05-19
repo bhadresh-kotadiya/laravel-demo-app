@@ -16,7 +16,14 @@ use App\Http\Controllers\BlogController;
 
 Route::get('/form', function () {
     return view('from');
-});
+})->name('form');
 
-Route::get('/store', [BlogController::class, 'store'])->name('store');
+Route::get('/alert', function () {
+    return view('alert');
+})->name('alert');
 
+Route::get('/', [BlogController::class, 'index'])->name('index');
+Route::post('store', [BlogController::class, 'store'])->name('store');
+Route::get('edit/{id}', [BlogController::class, 'edit'])->name('edit');
+Route::post('update/{id}', [BlogController::class, 'update'])->name('update');
+Route::delete('delete/{id}', [BlogController::class, 'delete'])->name('delete');

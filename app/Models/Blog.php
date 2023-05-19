@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
+
 // use Cviebrock\EloquentSluggable\Sluggable;
 
 
@@ -18,12 +20,6 @@ class Blog extends Model
         'description',
     ];
 
-    // public function sluggable(): array
-    // {
-    //     return [
-    //         'slug' => [
-    //             'source' => 'blog_title'
-    //         ]
-    //     ];
-    // }
+    // protected $guarded = ['title'];
+
 }
